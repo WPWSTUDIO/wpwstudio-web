@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WPW Studio | Global IP Publishing</title>
+
+    <meta name="description" content="독창적인 해외 우수 게임 및 콘텐츠 IP를 발굴하여 국내 시장에 소개하는 엔드투엔드 퍼블리싱 스튜디오입니다.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WPW Studio | Global IP Publishing">
+    <meta property="og:description" content="성공적인 국내 론칭부터 라이브 서비스 운영까지 책임지는 엔드투엔드 퍼블리싱">
+    <meta property="og:image" content="https://대표님도메인.com/preview-image.jpg"> <meta property="og:url" content="https://대표님도메인.com"> <link rel="icon" href="/favicon.ico"> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* 기본 초기화 및 전체 톤앤매너 */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body, html { height: 100%; font-family: 'Noto Sans KR', sans-serif; background-color: #050505; color: #e0e0e0; -webkit-font-smoothing: antialiased; }
+
+        /* 메인 컨테이너 (세로 중앙 정렬) */
+        .container { display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; text-align: center; padding: 40px 20px; position: relative; z-index: 1; }
+
+        /* 로고 타이틀 */
+        h1.brand-logo { font-family: 'Montserrat', sans-serif; font-size: 4.5em; font-weight: 700; letter-spacing: 0.15em; margin-bottom: 0.2em; text-transform: uppercase; color: #ffffff; }
+        .sub-logo { font-family: 'Montserrat', sans-serif; font-size: 1.2em; font-weight: 300; letter-spacing: 0.4em; color: #888; text-transform: uppercase; margin-bottom: 3em; }
+
+        /* 핵심 업무 설명 (3단락) */
+        .core-business { display: flex; gap: 40px; margin-bottom: 2em; flex-wrap: wrap; justify-content: center; max-width: 900px; }
+        .business-item { flex: 1; min-width: 250px; padding: 30px; border: 1px solid #222; background: rgba(20, 20, 20, 0.5); border-radius: 8px; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .business-item:hover { transform: translateY(-5px); border-color: #555; }
+
+        .business-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            color: #fff;
+            margin-bottom: 15px;
+            letter-spacing: 0.1em;
+            min-height: 2.8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .business-item p { font-size: 0.95em; color: #aaa; line-height: 1.6; word-break: keep-all; }
+
+        /* 하단 레이아웃 (좌우 밸런스 조정) */
+        .footer-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 3em;
+            padding-top: 2.5em;
+            border-top: 1px solid #222;
+        }
+
+        /* 왼쪽 파트너 영역 */
+        .partners-section { text-align: left; }
+        .partners-section h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8em; color: #666; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 15px; }
+        .partner-grid { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        /* 💡 수정됨: display: inline-flex로 한 줄로 만들고 세로 중앙 정렬 */
+        .partner-box { padding: 12px 25px; border-radius: 6px; background: rgba(20, 20, 20, 0.5); color: #ccc; font-weight: 500; letter-spacing: 0.05em; transition: color 0.3s; display: inline-flex; align-items: center; }
+        .partner-box:hover { color: #fff; }
+        /* 💡 수정됨: margin-top(아래로 내림)을 지우고 margin-left(옆으로 밀기) 적용 */
+        .partner-box span { font-size: 0.85em; color: #777; font-weight: 300; margin-left: 10px; }
+
+        /* 오른쪽 연락처 영역 */
+        /* 💡 수정됨: 왼쪽 박스의 padding(12px)만큼 이메일 텍스트를 위로 올려서 텍스트 라인을 완벽하게 맞춤 */
+        .contact-section { text-align: right; margin-bottom: 12px; }
+        .contact-section h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8em; color: #555; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 15px; }
+        .contact-section a { font-size: 1.1em; color: #aaa; text-decoration: none; font-weight: 500; transition: color 0.3s; letter-spacing: 0.05em; }
+        .contact-section a:hover { color: #fff; }
+
+        /* 배경 그라데이션 */
+        .bg-gradient { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle at 50% 0%, #1a1a24 0%, #050505 60%); z-index: 0; pointer-events: none; }
+
+        /* 모바일 반응형 */
+        @media (max-width: 768px) {
+            h1.brand-logo { font-size: 2.8em; }
+            .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 40px; }
+            .partners-section, .contact-section { text-align: center; margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+<div class="bg-gradient"></div>
+
+<div class="container">
+    <h1 class="brand-logo">WPW Studio</h1>
+    <div class="sub-logo">Publishing & Localization</div>
+
+    <div class="core-business">
+        <div class="business-item">
+            <h3>GLOBAL IP SOURCING</h3>
+            <p>독창적인 서사와 잠재력을 가진 해외 우수 게임 및 콘텐츠 IP를 발굴하여 국내 시장에 소개합니다.</p>
+        </div>
+        <div class="business-item">
+            <h3>LOCALIZATION</h3>
+            <p>단순한 번역을 넘어, 한국 유저의 정서와 트렌드에 완벽하게 부합하는 심도 있는 현지화 작업을 수행합니다.</p>
+        </div>
+        <div class="business-item">
+            <h3>PUBLISHING &<br>LIVE OPS</h3>
+            <p>성공적인 국내 론칭부터 커뮤니티 관리, 라이브 서비스 운영까지 책임지는 엔드투엔드 퍼블리싱을 제공합니다.</p>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="partners-section">
+            <h4>Global Partners</h4>
+            <div class="partner-grid">
+                <div class="partner-box">
+                    Porld Inc. <span>Delaware, USA</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h4>Business Contact</h4>
+            <a href="mailto:official@wpwstudio.com">official@wpwstudio.com</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

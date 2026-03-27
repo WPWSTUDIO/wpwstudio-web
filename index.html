@@ -10,7 +10,11 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="WPW Studio | Global IP Publishing">
     <meta property="og:description" content="성공적인 국내 론칭부터 라이브 서비스 운영까지 책임지는 엔드투엔드 퍼블리싱">
-    <meta property="og:image" content="https://wpwstudio.com/WPW_Studio.jpg"> <meta property="og:url" content="https://wpwstudio.com"> <link rel="icon" href="/WPW_Studio.jpg"> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta property="og:image" content="https://wpwstudio.com/WPW_Studio.jpg">
+    <meta property="og:url" content="https://wpwstudio.com">
+
+    <link rel="icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         /* 기본 초기화 및 전체 톤앤매너 */
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,14 +62,11 @@
         .partners-section h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8em; color: #666; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 15px; }
         .partner-grid { display: flex; gap: 15px; flex-wrap: wrap; }
 
-        /* 💡 수정됨: display: inline-flex로 한 줄로 만들고 세로 중앙 정렬 */
         .partner-box { padding: 12px 25px; border-radius: 6px; background: rgba(20, 20, 20, 0.5); color: #ccc; font-weight: 500; letter-spacing: 0.05em; transition: color 0.3s; display: inline-flex; align-items: center; }
         .partner-box:hover { color: #fff; }
-        /* 💡 수정됨: margin-top(아래로 내림)을 지우고 margin-left(옆으로 밀기) 적용 */
         .partner-box span { font-size: 0.85em; color: #777; font-weight: 300; margin-left: 10px; }
 
         /* 오른쪽 연락처 영역 */
-        /* 💡 수정됨: 왼쪽 박스의 padding(12px)만큼 이메일 텍스트를 위로 올려서 텍스트 라인을 완벽하게 맞춤 */
         .contact-section { text-align: right; margin-bottom: 12px; }
         .contact-section h4 { font-family: 'Montserrat', sans-serif; font-size: 0.8em; color: #555; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 15px; }
         .contact-section a { font-size: 1.1em; color: #aaa; text-decoration: none; font-weight: 500; transition: color 0.3s; letter-spacing: 0.05em; }
@@ -116,10 +117,20 @@
 
         <div class="contact-section">
             <h4>Business Contact</h4>
-            <a href="mailto:official@wpwstudio.com">official@wpwstudio.com</a>
+            <a id="email-wpw" href="#"></a>
         </div>
     </div>
 </div>
-</body>
 
+<script>
+    (function() {
+        var el = document.getElementById('email-wpw');
+        var u = 'official';
+        var d = 'wpwstudio.com';
+        el.href = 'mailto:' + u + '@' + d;
+        el.textContent = u + '@' + d;
+    })();
+</script>
+
+</body>
 </html>
